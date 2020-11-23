@@ -6,6 +6,8 @@ This is a Tech Store website project (Simple E-Commerce Site)
 
 - [React](https://reactjs.org/) a JavaScript library for building user interfaces.
 - [React-Router](https://reactrouter.com/) for routing.
+- [React-Icons](https://react-icons.github.io/react-icons/) for icons.
+- [Styled-Components](https://styled-components.com/) for writing CSS in JavaScript.
 
 
 ### Getting started:
