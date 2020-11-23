@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/App.css';
 import Home from './pages/HomePage';
@@ -8,7 +9,6 @@ import Products from './pages/ProductsPage';
 import SingleProduct from './pages/SingleProductPage';
 import Cart from './pages/CartPage';
 import Default from './pages/DefaultPage';
-import { Route, Switch } from 'react-router-dom';
 import Navbar from './components/navbar/NavBar';
 import SideBar from './components/navbar/SideBar';
 import SideCart from './components/sidecart/SideCart';
