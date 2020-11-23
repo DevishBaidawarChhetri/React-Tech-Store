@@ -12,6 +12,7 @@ import Default from './pages/DefaultPage';
 import Navbar from './components/navbar/NavBar';
 import SideBar from './components/navbar/SideBar';
 import SideCart from './components/sidecart/SideCart';
+import Footer from './components/footer/Footer';
 
 function App () {
   return (
@@ -29,6 +30,7 @@ function App () {
         <Route path="/cart" component={ Cart } />
         <Route component={ Default } />
       </Switch>
+      <Footer />
     </>
   );
 }
