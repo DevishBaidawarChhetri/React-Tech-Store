@@ -16,3 +16,23 @@ body {
 .text-main {
   color: var(--primaryColor);
 }
+
+.main-link {
+  padding: 0.5rem 1rem;
+  color: var(--mainWhite);
+  background: var(--primaryColor);
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  border: none;
+  outline: 2px solid var(--primaryColor);
+  outline-offset: 2px;
+  transition: var(--mainTransition);
+}
+
+.main-link:hover{
+  color: var(--colorPrimary);
+  background: var(--darkGrey);
+  outline-color: var(--darkGrey);
+  text-decoration: none;
+}

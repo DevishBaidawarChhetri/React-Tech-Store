@@ -13,7 +13,7 @@ export default function Footer () {
                 <div className="container py-3">
                   <div className="row">
                     <div className="col-md-6">
-                      <p className="text-capitalize">
+                      <p className="text-capitalize m-0">
                         copyright &copy; tech store { new Date().getFullYear() }. All Rights Reserved.
                       </p>
                     </div>
