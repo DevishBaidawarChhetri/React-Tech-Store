@@ -7,8 +7,7 @@ export default function contact () {
         <div className="row m-0">
           <div className="col-10 mx-auto col-md-6 my-3">
             <Title title="contacts" center />
-            <form className="mt-5">
-
+            <form className="mt-5" action="https://formspree.io/f/mnqobjjk" method="POST">
               {/* Full Name */ }
               <div className="form-group">
                 <input
