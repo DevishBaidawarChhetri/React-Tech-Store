@@ -5,7 +5,10 @@ body {
   background: var(--mainGrey) !important;
   color: var(--mainBlack);
 }
-
+.active{
+  color: var(--mainWhite) !important;
+  background: var(--primaryColor) !important;
+}
 .text-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
@@ -18,7 +21,7 @@ body {
 }
 
 .main-link {
-  margin: 1rem;
+  margin: 1rem 0;
   padding: 0.5rem 1rem;
   color: var(--mainWhite);
   background: var(--primaryColor);
@@ -32,7 +35,6 @@ body {
 }
 
 .main-link:hover{
-  color: var(--colorPrimary);
   background: var(--darkGrey);
   outline-color: var(--darkGrey);
   text-decoration: none;

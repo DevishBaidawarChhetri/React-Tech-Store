@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '../components/Banner/Hero';
 import { Link } from 'react-router-dom';
-import defaultBackground from '../components/images/defaultBcg.jpeg';
+import defaultBackground from '../images/defaultBcg.jpeg';
 
 export default function DefaultPage () {
   return (

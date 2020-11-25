@@ -1,9 +1,9 @@
 import React from 'react';
 import { FaBars, FaCartPlus } from 'react-icons/fa';
 import styled from 'styled-components';
-import { ProductConsumer } from '../context/context';
+import { ProductConsumer } from '../Context/context';
 import { Link } from 'react-router-dom';
-import logo from '../images/logo.svg';
+import logo from '../../images/logo.svg';
 export default function NavBar () {
   return (
     <>
@@ -40,6 +40,7 @@ const NavWrapper = styled.nav`
   padding: 1rem 1.5rem;
   background: var(--mainGrey);
   border-bottom: 3px solid var(--primaryColor);
+  z-index: 1;
   .nav-center{
     display: flex;
     align-items: center;

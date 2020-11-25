@@ -23,5 +23,5 @@ export const linkData = [
     id: 5,
     text: 'cart',
     path: '/cart'
-  },
+  }
 ];

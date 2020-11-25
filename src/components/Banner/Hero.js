@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import mainBackground from '../images/mainBcg.jpeg';
+import mainBackground from '../../images/mainBcg.jpeg';
 export default function Hero ( { img, title, max, children } ) {
   return (
     <>
@@ -23,11 +23,16 @@ const HeroWrapper = styled.div`
   justify-content: center;
   background: linear-gradient(var(--primaryRGBA), var(--primaryRGBA)), url(${ props => props.img }) center/cover no-repeat;
   .title{
-    padding-top:2rem;
     font-size:3.5rem;
     text-transform: capitalize;
     text-shadow: 4px 4px 2px var(--primaryRGBA);
     letter-spacing: var(--mainSpacing);
+  }
+  @media only screen and (max-width: 768px){
+    background-position:0 0;
+  }
+  @media only screen and (max-width: 480px){
+    background-position:12% 0;
   }
 `
 Hero.defaultProps = {

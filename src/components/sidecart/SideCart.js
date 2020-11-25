@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductConsumer } from '../context/context';
+import { ProductConsumer } from '../Context/context';
 import styled from 'styled-components';
 
 export default function SideCart () {

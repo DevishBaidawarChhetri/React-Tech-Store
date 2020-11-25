@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { ProductConsumer } from '../context/context';
+import { ProductConsumer } from '../Context/context';
 
 export default function SideBar () {
   return (
@@ -17,7 +17,7 @@ export default function SideBar () {
                     links.map( ( link ) => {
                       return (
                         <li key={ link.id }>
-                          <Link to={ link.path } className="sidebar-link" onClick={ handleSidebar }>{ link.text }</Link>
+                          <NavLink exact to={ link.path } className="sidebar-link" onClick={ handleSidebar } activeClassName="active">{ link.text }</NavLink>
                         </li>
                       );
                     } )

@@ -9,10 +9,10 @@ import Products from './pages/ProductsPage';
 import SingleProduct from './pages/SingleProductPage';
 import Cart from './pages/CartPage';
 import Default from './pages/DefaultPage';
-import Navbar from './components/navbar/NavBar';
-import SideBar from './components/navbar/SideBar';
-import SideCart from './components/sidecart/SideCart';
-import Footer from './components/footer/Footer';
+import Navbar from './components/Navbar/NavBar';
+import SideBar from './components/Navbar/SideBar';
+import SideCart from './components/Sidecart/SideCart';
+import Footer from './components/Footer/Footer';
 
 function App () {
   return (

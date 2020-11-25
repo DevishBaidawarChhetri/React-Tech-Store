@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { ProductProvider } from './components/context/context';
+import { ProductProvider } from './components/Context/context';
 
 ReactDOM.render(
   <React.StrictMode>

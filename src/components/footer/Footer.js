@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ProductConsumer } from '../context/context';
+import { ProductConsumer } from '../Context/context';
 
 export default function Footer () {
   return (
@@ -8,8 +8,9 @@ export default function Footer () {
       <ProductConsumer>
         {
           value => {
+            console.log( value );
             return (
-              <FooterWrapper>
+              <FooterWrapper className="text-center">
                 <div className="container py-3">
                   <div className="row">
                     <div className="col-md-6">
