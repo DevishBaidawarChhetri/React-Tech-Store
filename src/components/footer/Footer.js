@@ -8,7 +8,7 @@ export default function Footer () {
       <ProductConsumer>
         {
           value => {
-            console.log( value );
+            // console.log( value );
             return (
               <FooterWrapper className="text-center">
                 <div className="container py-3">

@@ -2,6 +2,7 @@ import React from 'react';
 import Hero from '../components/Banner/Hero';
 import { Link } from 'react-router-dom';
 import Services from '../components/Services/Services';
+import FeaturedProduct from '../components/Product/FeaturedProduct';
 export default function HomePage () {
   return (
     <>
@@ -11,6 +12,7 @@ export default function HomePage () {
         </Link>
       </Hero>
       <Services />
+      <FeaturedProduct />
     </>
   )
 }
