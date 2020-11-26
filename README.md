@@ -8,6 +8,7 @@ This is a Tech Store website project (Simple E-Commerce Site)
 - [React-Router](https://reactrouter.com/) for routing.
 - [React-Icons](https://react-icons.github.io/react-icons/) for icons.
 - [Styled-Components](https://styled-components.com/) for writing CSS in JavaScript.
+- [Formspree](https://formspree.io/) for handeling Contact Form messages.
 
 
 ### Getting started:

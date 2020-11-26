@@ -45,7 +45,7 @@ export default function contact () {
                   className="form-control"
                   name="message"
                   rows="5"
-                  placeholder="Hello World!"
+                  placeholder="Hello World! (Message Here)v"
                   required
                 ></textarea>
               </div>
