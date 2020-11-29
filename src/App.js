@@ -13,10 +13,12 @@ import Navbar from './components/Navbar/NavBar';
 import SideBar from './components/Navbar/SideBar';
 import SideCart from './components/Sidecart/SideCart';
 import Footer from './components/Footer/Footer';
+import ScrollToTop from './ScrollToTop';
 
 function App () {
   return (
     <>
+      <ScrollToTop />
       {/* Nav Bar, Side Bar and Cart and Footer Component */ }
       <Navbar />
       <SideBar />
