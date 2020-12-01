@@ -16,7 +16,7 @@ class ProductProvider extends Component {
     cartSubTotal: 0,
     cartTax: 0,
     cartTotal: 0,
-    storedProducts: [],
+    storeProducts: [],
     filteredProducts: [],
     featuredProducts: [],
     singleProduct: {},
@@ -46,33 +46,9 @@ class ProductProvider extends Component {
       cart: this.getStorageCart(),
       singleProduct: this.getStorageProduct(),
       loading: false
-    } )
-  }
-
-  // Getting Cart from local storage
-  getStorageCart = () => {
-    return [];
-  }
-
-  // Getting Product from local storage
-  getStorageProduct = () => {
-    return (
-      localStorage.getItem( 'singleProduct' ) ? JSON.parse( localStorage.getItem( 'singleProduct' ) ) : {}
-    );
-  }
-
-  //Get Totals
-  getTotal = () => { };
-
-  //Add Total
-  addTotal = () => { };
-
-  //Sync to storage
-  syncStorage = () => { };
-
-  // Add to cart
-  addToCart = ( id ) => {
-    console.log( `Add to cart ${ id }` );
+    }, () => {
+      this.addTotal();
+    } );
   };
 
   // Set single product
@@ -84,6 +60,83 @@ class ProductProvider extends Component {
       singleProduct: { ...product },
       loading: false
     } )
+  }
+
+  // Getting Product from local storage
+  getStorageProduct = () => {
+    return (
+      localStorage.getItem( 'singleProduct' ) ? JSON.parse( localStorage.getItem( 'singleProduct' ) ) : {}
+    );
+  }
+
+  // Add to cart
+  addToCart = ( id ) => {
+    let tempCart = [ ...this.state.cart ];
+    let tempProducts = [ ...this.state.storeProducts ];
+    let tempItem = tempCart.find( item => item.id === id );
+
+    // Check if cart is empty
+    if ( !tempItem ) {
+      tempItem = tempProducts.find( item => item.id === id );
+      let total = tempItem.price;
+      let cartItems = { ...tempItem, count: 1, total }
+      tempCart = [ ...tempCart, cartItems ];
+    } else {
+      tempItem.count++;
+      tempItem.total = tempItem.price * tempItem.count;
+      tempItem.total = parseFloat( tempItem.total.toFixed( 2 ) );
+    }
+
+    // Adding products to cart 
+    this.setState( {
+      cart: tempCart
+    }, () => {
+      this.addTotal(); // calculating total
+      this.syncStorage(); // syncing to local storage (session)
+      this.openCart(); // opening cart
+    } )
+  };
+
+  //Get Totals
+  getTotal = () => {
+    let subTotal = 0;
+    let cartItems = 0;
+    this.state.cart.forEach( item => {
+      subTotal += item.total;
+      cartItems += item.count
+    } );
+    subTotal = parseFloat( subTotal.toFixed( 2 ) );
+    let tax = parseFloat( ( subTotal * 0.13 ).toFixed( 2 ) );
+    let total = parseFloat( ( subTotal + tax ).toFixed( 2 ) );
+    return {
+      cartItems,
+      subTotal,
+      tax,
+      total
+    }
+  };
+
+  //Add Total
+  addTotal = () => {
+    const totals = this.getTotal();
+    this.setState( {
+      cartItems: totals.cartItems,
+      cartSubTotal: totals.subTotal,
+      cartTax: totals.tax,
+      cartTotal: totals.total
+    } )
+  };
+
+  //Sync to storage
+  syncStorage = () => {
+    localStorage.setItem( 'cart', JSON.stringify( this.state.cart ) );
+  };
+
+  // Getting Cart from local storage
+  getStorageCart = () => {
+    return (
+      localStorage.getItem( 'cart' ) ? JSON.parse( localStorage.getItem( 'cart' ) ) : []
+    );
   }
 
   // Handle Sidebar

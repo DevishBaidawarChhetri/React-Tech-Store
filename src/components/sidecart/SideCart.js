@@ -1,6 +1,7 @@
 import React from 'react';
 import { ProductConsumer } from '../Context/context';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export default function SideCart () {
   return (
@@ -8,10 +9,26 @@ export default function SideCart () {
       <ProductConsumer>
         {
           value => {
-            const { cartOpen, closeCart, cart } = value;
+            const { cartOpen, closeCart, cart, cartTotal } = value;
             return (
               <CartWrapper show={ cartOpen } onClick={ closeCart }>
-                <p>Cart Items</p>
+                <ul>
+                  {
+                    cart.map( item => {
+                      return ( <li key={ item.id } className="cart-item mb-4 p-3">
+                        <img width="50px" src={ item.image } alt={ item.title } />
+                        <div className="mt-3">
+                          <h6 className="text-title text-uppercase">{ item.title }</h6>
+                          <h6 className="text-capitalize">quantity: { item.count }</h6>
+                        </div>
+                      </li> );
+                    } )
+                  }
+                </ul>
+                <h5 className="text-capitalize text-main">cart total: ${ cartTotal }</h5>
+                <div className="text-center mb-5">
+                  <Link to="/cart" className="main-link">cart page</Link>
+                </div>
               </CartWrapper>
             );
           }
@@ -33,7 +50,19 @@ const CartWrapper = styled.div`
   border-left: 3px solid var(--primaryColor);
   transition:var(--mainTransition);
   transform: ${ props => props.show ? 'translateX(0)' : 'translateX(100%)' };
-  @media(min-width: 576px){
-    width: 15rem;
+  @media only screen and (min-width: 576px){
+    width: 20rem;
+  }
+  overflow: scroll;
+  padding: 1.5rem;
+  text-align: center;
+  ul{
+    padding: 0 !important;
+  }
+  .cart-item{
+    background: var(--lightGrey);
+    list-style-type: none;
+    outline: 2px solid var(--primaryColor);
+    outline-offset: -10px;
   }
 `

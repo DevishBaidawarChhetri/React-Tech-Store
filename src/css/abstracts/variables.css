@@ -5,6 +5,7 @@
   --darkGrey: #5f5e5e;
   --mainWhite: #ffffff;
   --mainBlack: #222222;
+  --lightGrey: #ececec;
   --mainTransition: all 0.25s ease-in-out;
-  --mainSpacing: 0.5rem;
+  --mainSpacing: 0.2rem;
 }

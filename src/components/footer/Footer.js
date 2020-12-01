@@ -13,15 +13,15 @@ export default function Footer () {
               <FooterWrapper className="text-center">
                 <div className="container py-3">
                   <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 d-flex justify-content-start" style={ { margin: "5px 0" } }>
                       <p className="text-capitalize m-0">
                         copyright &copy; tech store { new Date().getFullYear() }. All Rights Reserved.
                       </p>
                     </div>
-                    <div className="col-md-6 d-flex justify-content-around">
+                    <div className="icons col-md-6 d-flex justify-content-end">
                       {
                         value.socialIcons.map( ( item ) => {
-                          return ( <a href={ item.url } key={ item.id } >{ item.icon }</a> );
+                          return ( <a style={ { margin: "5px" } } href={ item.url } key={ item.id } >{ item.icon }</a> );
                         } )
                       }
                     </div>
@@ -46,5 +46,11 @@ const FooterWrapper = styled.footer`
   .icon:hover{
     color: var(--primaryColor);
     cursor: pointer;
+  }
+  @media only screen and (max-width: 576px){
+    .icons{
+      justify-content: center !important;
+      padding: 4px 0;
+    }
   }
 `
