@@ -35,6 +35,7 @@ body {
 }
 
 .main-link:hover{
+  color: var(--mainWhite);
   background: var(--darkGrey);
   outline-color: var(--darkGrey);
   text-decoration: none;
