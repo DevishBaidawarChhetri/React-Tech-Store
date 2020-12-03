@@ -13,7 +13,7 @@ export default function Footer () {
               <FooterWrapper className="text-center">
                 <div className="container py-3">
                   <div className="row">
-                    <div className="col-md-6 d-flex justify-content-start" style={ { margin: "5px 0" } }>
+                    <div className="copyright col-md-6 d-flex justify-content-start" style={ { margin: "5px 0" } }>
                       <p className="text-capitalize m-0">
                         copyright &copy; tech store { new Date().getFullYear() }. All Rights Reserved.
                       </p>
@@ -47,8 +47,8 @@ const FooterWrapper = styled.footer`
     color: var(--primaryColor);
     cursor: pointer;
   }
-  @media only screen and (max-width: 576px){
-    .icons{
+  @media only screen and (max-width: 768px){
+    .copyright, .icons{
       justify-content: center !important;
       padding: 4px 0;
     }
