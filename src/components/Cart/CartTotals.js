@@ -1,7 +1,8 @@
 import React from 'react';
 import { ProductConsumer } from '../Context/context';
+import PayPalBtn from './PayPalBtn';
 
-export default function CartTotals () {
+export default function CartTotals ( { history } ) {
   return (
     <div className="container">
       <div className="row">
@@ -16,6 +17,13 @@ export default function CartTotals () {
                   <h3>Subtotal: $ { cartSubTotal }</h3>
                   <h3>Tax: $ { cartTax }</h3>
                   <h3>Total: $ { cartTotal }</h3>
+                  <div className="mt-5">
+                    <PayPalBtn
+                      history={ history }
+                      cartTotal={ cartTotal }
+                      clearCart={ clearCart }
+                    />
+                  </div>
                 </div>
               );
             }
