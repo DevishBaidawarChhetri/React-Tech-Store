@@ -12,8 +12,7 @@ export default function SingleProductPage () {
         {
           value => {
             const { singleProduct, addToCart, loading } = value;
-            if ( loading )
-            {
+            if ( loading ) {
               console.log( 'hello from laoding' );
               return ( <h1>Product Loading...</h1> );
             }
@@ -23,7 +22,7 @@ export default function SingleProductPage () {
                 <div className="container">
                   <div className="row">
                     <div className="col-10 mx-auto col-sm-8 col-md-6 my-3">
-                      <img src={ `../${ image }` } alt={ title } className="img-fluid" />
+                      <img src={ `${ image }` } alt={ title } className="img-fluid" />
                     </div>
                     <div className="col-10 mx-auto col-sm-8 col-md-6 my-3">
                       <h5 className="text-title mb-4">model: { title }</h5>
